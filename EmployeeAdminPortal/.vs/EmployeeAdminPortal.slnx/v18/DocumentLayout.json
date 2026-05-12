@@ -1,0 +1,200 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\NikhileshGolla\\Desktop\\Csharp\\EmployeeAdminPortal\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{603857E3-D718-81C8-4BBC-3F4698964538}|EmployeeAdminPortal.Api\\EmployeeAdminPortal.Api.csproj|c:\\users\\nikhileshgolla\\desktop\\csharp\\employeeadminportal\\employeeadminportal.api\\controllers\\employeescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{603857E3-D718-81C8-4BBC-3F4698964538}|EmployeeAdminPortal.Api\\EmployeeAdminPortal.Api.csproj|solutionrelative:employeeadminportal.api\\controllers\\employeescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{603857E3-D718-81C8-4BBC-3F4698964538}|EmployeeAdminPortal.Api\\EmployeeAdminPortal.Api.csproj|c:\\users\\nikhileshgolla\\desktop\\csharp\\employeeadminportal\\employeeadminportal.api\\dtos\\employeesdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{603857E3-D718-81C8-4BBC-3F4698964538}|EmployeeAdminPortal.Api\\EmployeeAdminPortal.Api.csproj|solutionrelative:employeeadminportal.api\\dtos\\employeesdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{603857E3-D718-81C8-4BBC-3F4698964538}|EmployeeAdminPortal.Api\\EmployeeAdminPortal.Api.csproj|c:\\users\\nikhileshgolla\\desktop\\csharp\\employeeadminportal\\employeeadminportal.api\\dtos\\updateemployeedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{603857E3-D718-81C8-4BBC-3F4698964538}|EmployeeAdminPortal.Api\\EmployeeAdminPortal.Api.csproj|solutionrelative:employeeadminportal.api\\dtos\\updateemployeedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{603857E3-D718-81C8-4BBC-3F4698964538}|EmployeeAdminPortal.Api\\EmployeeAdminPortal.Api.csproj|c:\\users\\nikhileshgolla\\desktop\\csharp\\employeeadminportal\\employeeadminportal.api\\dtos\\addemployeedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{603857E3-D718-81C8-4BBC-3F4698964538}|EmployeeAdminPortal.Api\\EmployeeAdminPortal.Api.csproj|solutionrelative:employeeadminportal.api\\dtos\\addemployeedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{603857E3-D718-81C8-4BBC-3F4698964538}|EmployeeAdminPortal.Api\\EmployeeAdminPortal.Api.csproj|c:\\users\\nikhileshgolla\\desktop\\csharp\\employeeadminportal\\employeeadminportal.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{603857E3-D718-81C8-4BBC-3F4698964538}|EmployeeAdminPortal.Api\\EmployeeAdminPortal.Api.csproj|solutionrelative:employeeadminportal.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{603857E3-D718-81C8-4BBC-3F4698964538}|EmployeeAdminPortal.Api\\EmployeeAdminPortal.Api.csproj|c:\\users\\nikhileshgolla\\desktop\\csharp\\employeeadminportal\\employeeadminportal.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{603857E3-D718-81C8-4BBC-3F4698964538}|EmployeeAdminPortal.Api\\EmployeeAdminPortal.Api.csproj|solutionrelative:employeeadminportal.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{603857E3-D718-81C8-4BBC-3F4698964538}|EmployeeAdminPortal.Api\\EmployeeAdminPortal.Api.csproj|c:\\users\\nikhileshgolla\\desktop\\csharp\\employeeadminportal\\employeeadminportal.api\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{603857E3-D718-81C8-4BBC-3F4698964538}|EmployeeAdminPortal.Api\\EmployeeAdminPortal.Api.csproj|solutionrelative:employeeadminportal.api\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{603857E3-D718-81C8-4BBC-3F4698964538}|EmployeeAdminPortal.Api\\EmployeeAdminPortal.Api.csproj|c:\\users\\nikhileshgolla\\desktop\\csharp\\employeeadminportal\\employeeadminportal.api\\models\\entities\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{603857E3-D718-81C8-4BBC-3F4698964538}|EmployeeAdminPortal.Api\\EmployeeAdminPortal.Api.csproj|solutionrelative:employeeadminportal.api\\models\\entities\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{603857E3-D718-81C8-4BBC-3F4698964538}|EmployeeAdminPortal.Api\\EmployeeAdminPortal.Api.csproj|c:\\users\\nikhileshgolla\\desktop\\csharp\\employeeadminportal\\employeeadminportal.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{603857E3-D718-81C8-4BBC-3F4698964538}|EmployeeAdminPortal.Api\\EmployeeAdminPortal.Api.csproj|solutionrelative:employeeadminportal.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{603857E3-D718-81C8-4BBC-3F4698964538}|EmployeeAdminPortal.Api\\EmployeeAdminPortal.Api.csproj|c:\\users\\nikhileshgolla\\desktop\\csharp\\employeeadminportal\\employeeadminportal.api\\employeeadminportal.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{603857E3-D718-81C8-4BBC-3F4698964538}|EmployeeAdminPortal.Api\\EmployeeAdminPortal.Api.csproj|solutionrelative:employeeadminportal.api\\employeeadminportal.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{603857E3-D718-81C8-4BBC-3F4698964538}|EmployeeAdminPortal.Api\\EmployeeAdminPortal.Api.csproj|c:\\users\\nikhileshgolla\\desktop\\csharp\\employeeadminportal\\employeeadminportal.api\\employeeadminportal.api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{603857E3-D718-81C8-4BBC-3F4698964538}|EmployeeAdminPortal.Api\\EmployeeAdminPortal.Api.csproj|solutionrelative:employeeadminportal.api\\employeeadminportal.api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UpdateEmployeeDto.cs",
+              "DocumentMoniker": "C:\\Users\\NikhileshGolla\\Desktop\\Csharp\\EmployeeAdminPortal\\EmployeeAdminPortal.Api\\Dtos\\UpdateEmployeeDto.cs",
+              "RelativeDocumentMoniker": "EmployeeAdminPortal.Api\\Dtos\\UpdateEmployeeDto.cs",
+              "ToolTip": "C:\\Users\\NikhileshGolla\\Desktop\\Csharp\\EmployeeAdminPortal\\EmployeeAdminPortal.Api\\Dtos\\UpdateEmployeeDto.cs",
+              "RelativeToolTip": "EmployeeAdminPortal.Api\\Dtos\\UpdateEmployeeDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T04:12:50.951Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AddEmployeeDto.cs",
+              "DocumentMoniker": "C:\\Users\\NikhileshGolla\\Desktop\\Csharp\\EmployeeAdminPortal\\EmployeeAdminPortal.Api\\Dtos\\AddEmployeeDto.cs",
+              "RelativeDocumentMoniker": "EmployeeAdminPortal.Api\\Dtos\\AddEmployeeDto.cs",
+              "ToolTip": "C:\\Users\\NikhileshGolla\\Desktop\\Csharp\\EmployeeAdminPortal\\EmployeeAdminPortal.Api\\Dtos\\AddEmployeeDto.cs",
+              "RelativeToolTip": "EmployeeAdminPortal.Api\\Dtos\\AddEmployeeDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-11T12:39:32.258Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EmployeesDto.cs",
+              "DocumentMoniker": "C:\\Users\\NikhileshGolla\\Desktop\\Csharp\\EmployeeAdminPortal\\EmployeeAdminPortal.Api\\Dtos\\EmployeesDto.cs",
+              "RelativeDocumentMoniker": "EmployeeAdminPortal.Api\\Dtos\\EmployeesDto.cs",
+              "ToolTip": "C:\\Users\\NikhileshGolla\\Desktop\\Csharp\\EmployeeAdminPortal\\EmployeeAdminPortal.Api\\Dtos\\EmployeesDto.cs",
+              "RelativeToolTip": "EmployeeAdminPortal.Api\\Dtos\\EmployeesDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-11T12:20:29.335Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EmployeesController.cs",
+              "DocumentMoniker": "C:\\Users\\NikhileshGolla\\Desktop\\Csharp\\EmployeeAdminPortal\\EmployeeAdminPortal.Api\\Controllers\\EmployeesController.cs",
+              "RelativeDocumentMoniker": "EmployeeAdminPortal.Api\\Controllers\\EmployeesController.cs",
+              "ToolTip": "C:\\Users\\NikhileshGolla\\Desktop\\Csharp\\EmployeeAdminPortal\\EmployeeAdminPortal.Api\\Controllers\\EmployeesController.cs*",
+              "RelativeToolTip": "EmployeeAdminPortal.Api\\Controllers\\EmployeesController.cs*",
+              "ViewState": "AgIAADcAAAAAAAAAAAAUwDsAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-11T11:55:39.421Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\NikhileshGolla\\Desktop\\Csharp\\EmployeeAdminPortal\\EmployeeAdminPortal.Api\\Program.cs",
+              "RelativeDocumentMoniker": "EmployeeAdminPortal.Api\\Program.cs",
+              "ToolTip": "C:\\Users\\NikhileshGolla\\Desktop\\Csharp\\EmployeeAdminPortal\\EmployeeAdminPortal.Api\\Program.cs",
+              "RelativeToolTip": "EmployeeAdminPortal.Api\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-11T10:55:00.781Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\NikhileshGolla\\Desktop\\Csharp\\EmployeeAdminPortal\\EmployeeAdminPortal.Api\\appsettings.json",
+              "RelativeDocumentMoniker": "EmployeeAdminPortal.Api\\appsettings.json",
+              "ToolTip": "C:\\Users\\NikhileshGolla\\Desktop\\Csharp\\EmployeeAdminPortal\\EmployeeAdminPortal.Api\\appsettings.json",
+              "RelativeToolTip": "EmployeeAdminPortal.Api\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-05-11T11:19:23.511Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\NikhileshGolla\\Desktop\\Csharp\\EmployeeAdminPortal\\EmployeeAdminPortal.Api\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "EmployeeAdminPortal.Api\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\NikhileshGolla\\Desktop\\Csharp\\EmployeeAdminPortal\\EmployeeAdminPortal.Api\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "EmployeeAdminPortal.Api\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAUAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-11T11:14:21.433Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "C:\\Users\\NikhileshGolla\\Desktop\\Csharp\\EmployeeAdminPortal\\EmployeeAdminPortal.Api\\Models\\Entities\\Employee.cs",
+              "RelativeDocumentMoniker": "EmployeeAdminPortal.Api\\Models\\Entities\\Employee.cs",
+              "ToolTip": "C:\\Users\\NikhileshGolla\\Desktop\\Csharp\\EmployeeAdminPortal\\EmployeeAdminPortal.Api\\Models\\Entities\\Employee.cs",
+              "RelativeToolTip": "EmployeeAdminPortal.Api\\Models\\Entities\\Employee.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-11T11:07:08.201Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\NikhileshGolla\\Desktop\\Csharp\\EmployeeAdminPortal\\EmployeeAdminPortal.Api\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "EmployeeAdminPortal.Api\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\NikhileshGolla\\Desktop\\Csharp\\EmployeeAdminPortal\\EmployeeAdminPortal.Api\\Properties\\launchSettings.json",
+              "RelativeToolTip": "EmployeeAdminPortal.Api\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAA8AAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-05-11T10:49:13.347Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "EmployeeAdminPortal.Api.csproj",
+              "DocumentMoniker": "C:\\Users\\NikhileshGolla\\Desktop\\Csharp\\EmployeeAdminPortal\\EmployeeAdminPortal.Api\\EmployeeAdminPortal.Api.csproj",
+              "RelativeDocumentMoniker": "EmployeeAdminPortal.Api\\EmployeeAdminPortal.Api.csproj",
+              "ToolTip": "C:\\Users\\NikhileshGolla\\Desktop\\Csharp\\EmployeeAdminPortal\\EmployeeAdminPortal.Api\\EmployeeAdminPortal.Api.csproj",
+              "RelativeToolTip": "EmployeeAdminPortal.Api\\EmployeeAdminPortal.Api.csproj",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-05-11T10:49:05.693Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "EmployeeAdminPortal.Api.http",
+              "DocumentMoniker": "C:\\Users\\NikhileshGolla\\Desktop\\Csharp\\EmployeeAdminPortal\\EmployeeAdminPortal.Api\\EmployeeAdminPortal.Api.http",
+              "RelativeDocumentMoniker": "EmployeeAdminPortal.Api\\EmployeeAdminPortal.Api.http",
+              "ToolTip": "C:\\Users\\NikhileshGolla\\Desktop\\Csharp\\EmployeeAdminPortal\\EmployeeAdminPortal.Api\\EmployeeAdminPortal.Api.http",
+              "RelativeToolTip": "EmployeeAdminPortal.Api\\EmployeeAdminPortal.Api.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2026-05-11T10:51:22.481Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
