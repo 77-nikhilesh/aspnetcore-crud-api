@@ -2,7 +2,7 @@
 using EmployeeAdminPortal.Api.Data;
 using EmployeeAdminPortal.Api.Models.Entities;
 using EmployeeAdminPortal.Api.Dtos;
-using Microsoft.EntityFrameworkCore;
+
 
 
 namespace EmployeeAdminPortal.Api.Controllers
@@ -19,7 +19,7 @@ namespace EmployeeAdminPortal.Api.Controllers
             _dbContext = dbcontext;
         }
 
-        //Get method
+        //GET All Employees Details
 
         [HttpGet]
         public IActionResult GetAllEmployees()
@@ -45,7 +45,7 @@ namespace EmployeeAdminPortal.Api.Controllers
         }
 
 
-        //Get Employee By Id
+        //GET Employee details By Id
         [HttpGet("{id:guid}")]
         public IActionResult GetEmployeeById(Guid id)
         {
@@ -66,7 +66,7 @@ namespace EmployeeAdminPortal.Api.Controllers
         }
 
 
-        //Post Method
+        //POST New Employee
         [HttpPost]
         public IActionResult AddEmployee(AddEmployeeDto addEmployeeDto)
         {
@@ -98,7 +98,7 @@ namespace EmployeeAdminPortal.Api.Controllers
 
 
 
-        //Update/Put Method
+        //UPDATE Employee Details
         [HttpPut("{id:guid}")]
         public IActionResult UpdateEmployee(Guid id,UpdateEmployeeDto updateemployeedto)
         {
@@ -126,7 +126,7 @@ namespace EmployeeAdminPortal.Api.Controllers
         }
 
 
-        //Delete Method
+        //DELETE Employee By Id
         [HttpDelete("{id:guid}")]
         public IActionResult DeleteEmployee(Guid id)
         {
