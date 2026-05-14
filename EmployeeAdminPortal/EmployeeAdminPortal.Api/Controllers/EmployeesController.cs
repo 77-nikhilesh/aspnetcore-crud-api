@@ -3,6 +3,7 @@ using EmployeeAdminPortal.Api.Data;
 using EmployeeAdminPortal.Api.Models.Entities;
 using EmployeeAdminPortal.Api.Dtos;
 using Microsoft.EntityFrameworkCore;
+using EmployeeAdminPortal.Api.Repositories;
 
 
 namespace EmployeeAdminPortal.Api.Controllers
@@ -13,18 +14,21 @@ namespace EmployeeAdminPortal.Api.Controllers
     {
 
         private readonly ApplicationDbContext _dbContext;
+        private readonly IEmployeeRepository _employeeRepository;
 
-        public EmployeesController(ApplicationDbContext dbcontext)
+
+        public EmployeesController(ApplicationDbContext dbcontext, IEmployeeRepository employeeRepository)
         {
             _dbContext = dbcontext;
+            _employeeRepository = employeeRepository;
         }
 
         //Get method
 
         [HttpGet]
-        public IActionResult GetAllEmployees()
+        public async Task<IActionResult> GetAllEmployeesASync()
         {
-            var employees = _dbContext.Employees.ToList();
+            var employees = await _employeeRepository.GetAllEmployeesAsync();
 
             var employeesdto=new List<EmployeesDto>();
            
@@ -47,9 +51,10 @@ namespace EmployeeAdminPortal.Api.Controllers
 
         //Get Employee By Id
         [HttpGet("{id:guid}")]
-        public IActionResult GetEmployeeById(Guid id)
+        public async  Task<IActionResult> GetEmployeeByIdAsync(Guid id)
         {
-            var employeeEntity = _dbContext.Employees.Find(id);
+            var employeeEntity = await _employeeRepository.GetEmployeeByIdAsync(Guid id);
+    
             if(employeeEntity == null)
             {
                 return NotFound();
@@ -68,7 +73,7 @@ namespace EmployeeAdminPortal.Api.Controllers
 
         //Post Method
         [HttpPost]
-        public IActionResult AddEmployee(AddEmployeeDto addEmployeeDto)
+        public async Task<IActionResult> AddEmployeeAsync(AddEmployeeDto addEmployeeDto)
         {
 
             var employeeEntity = new Employee
@@ -79,19 +84,19 @@ namespace EmployeeAdminPortal.Api.Controllers
                 Salary = addEmployeeDto.Salary
             };
 
-            _dbContext.Employees.Add(employeeEntity);
-            _dbContext.SaveChanges();
+            //_dbContext.Employees.Add(employeeEntity);
+            //_dbContext.SaveChanges();
 
-
+            var employeeEntity = await _employeeRepository.AddEmployee(employeeEntity);
             var employeeDto = new AddEmployeeDto
             {
-                Name = addEmployeeDto.Name,
-                Email = addEmployeeDto.Email,
-                Phone = addEmployeeDto.Phone,
-                Salary = addEmployeeDto.Salary
+                Name = employeeEntity.Name,
+                Email = employeeEntity.Email,
+                Phone = employeeEntity.Phone,
+                Salary = employeeEntity.Salary
             };
 
-            return CreatedAtAction(nameof(GetAllEmployees), new { id = employeeEntity.Id }, employeeDto);
+            return CreatedAtAction(nameof(GetAllEmployees), new { id = employeeDto.Id }, employeeDto);
 
          
         }
@@ -100,20 +105,22 @@ namespace EmployeeAdminPortal.Api.Controllers
 
         //Update/Put Method
         [HttpPut("{id:guid}")]
-        public IActionResult UpdateEmployee(Guid id,UpdateEmployeeDto updateemployeedto)
+        public async Task<IActionResult> UpdateEmployeeAsync(Guid id,UpdateEmployeeDto updateemployeedto)
         {
-            var employeeEntity = _dbContext.Employees.Find(id);
+            var employeeEntity = await _employeeRepository.UpdateEmployee(id, new Employee
+            {
+                Name = updateemployeedto.Name,
+                Email = updateemployeedto.Email,
+                Phone = updateemployeedto.Phone,
+                Salary = updateemployeedto.Salary
+            });
+
+
             if (employeeEntity == null)
             {
                 return NotFound();
 
             }
-            employeeEntity.Name = updateemployeedto.Name;
-            employeeEntity.Email = updateemployeedto.Email;
-            employeeEntity.Phone = updateemployeedto.Phone;
-            employeeEntity.Salary = updateemployeedto.Salary;
-
-            _dbContext.SaveChanges();
 
             var employeeDto = new EmployeesDto
             {
@@ -128,15 +135,14 @@ namespace EmployeeAdminPortal.Api.Controllers
 
         //Delete Method
         [HttpDelete("{id:guid}")]
-        public IActionResult DeleteEmployee(Guid id)
+        public async Task<IActionResult> DeleteEmployee(Guid id)
         {
-            var employeeEntity = _dbContext.Employees.Find(id);
+            var employeeEntity =await  _employeeRepository.DeleteEmployeeAsync(id);
             if (employeeEntity == null)
             {
                 return NotFound();
             }
-            _dbContext.Employees.Remove(employeeEntity);
-            _dbContext.SaveChanges();
+         
             return Ok("Employee deleted successfully.");
         }
     }
