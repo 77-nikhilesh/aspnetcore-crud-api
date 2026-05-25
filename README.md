@@ -1,4 +1,4 @@
-﻿# ASP.NET Core Web API CRUD Project
+# ASP.NET Core Web API CRUD Project
 
 ## Features
 - CRUD Operations
@@ -6,6 +6,8 @@
 - SQL Server
 - REST API
 - Swagger Integration
+- Repositories
+- AutoMapper
 
 ## Technologies
 - ASP.NET Core
