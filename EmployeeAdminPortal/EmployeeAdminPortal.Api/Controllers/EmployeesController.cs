@@ -25,7 +25,7 @@ namespace EmployeeAdminPortal.Api.Controllers
 
         //Get method
 
-        [HttpGet]
+        [HttpGet] //working good
         public async Task<IActionResult> GetAllEmployeesASync()
         {
             var employees = await _employeeRepository.GetAllEmployeesAsync();
@@ -50,10 +50,10 @@ namespace EmployeeAdminPortal.Api.Controllers
 
 
         //Get Employee By Id
-        [HttpGet("{id:guid}")]
-        public async  Task<IActionResult> GetEmployeeByIdAsync(Guid id)
+        [HttpGet("{id:guid}")] //working good
+        public async Task<IActionResult> GetEmployeeByIdAsync(Guid id)
         {
-            var employeeEntity = await _employeeRepository.GetEmployeeByIdAsync(Guid id);
+            var employeeEntity = await _employeeRepository.GetEmployeeByIdAsync(id);
     
             if(employeeEntity == null)
             {
@@ -72,31 +72,19 @@ namespace EmployeeAdminPortal.Api.Controllers
 
 
         //Post Method
-        [HttpPost]
+        [HttpPost]  //working good
         public async Task<IActionResult> AddEmployeeAsync(AddEmployeeDto addEmployeeDto)
         {
-
-            var employeeEntity = new Employee
+            var employeeEntity = await _employeeRepository.AddEmployeeAsync(addEmployeeDto);
+            var employeeDto = new EmployeesDto
             {
-                Name = addEmployeeDto.Name,
-                Email = addEmployeeDto.Email,
-                Phone = addEmployeeDto.Phone,
-                Salary = addEmployeeDto.Salary
-            };
-
-            //_dbContext.Employees.Add(employeeEntity);
-            //_dbContext.SaveChanges();
-
-            var employeeEntity = await _employeeRepository.AddEmployee(employeeEntity);
-            var employeeDto = new AddEmployeeDto
-            {
+                Id = employeeEntity.Id,
                 Name = employeeEntity.Name,
                 Email = employeeEntity.Email,
-                Phone = employeeEntity.Phone,
-                Salary = employeeEntity.Salary
+                Phone = employeeEntity.Phone
             };
 
-            return CreatedAtAction(nameof(GetAllEmployees), new { id = employeeDto.Id }, employeeDto);
+            return Ok(employeeDto);
 
          
         }
@@ -105,15 +93,9 @@ namespace EmployeeAdminPortal.Api.Controllers
 
         //Update/Put Method
         [HttpPut("{id:guid}")]
-        public async Task<IActionResult> UpdateEmployeeAsync(Guid id,UpdateEmployeeDto updateemployeedto)
+        public async Task<IActionResult> UpdateEmployeeAsync(Guid id, UpdateEmployeeDto updateemployeedto)
         {
-            var employeeEntity = await _employeeRepository.UpdateEmployee(id, new Employee
-            {
-                Name = updateemployeedto.Name,
-                Email = updateemployeedto.Email,
-                Phone = updateemployeedto.Phone,
-                Salary = updateemployeedto.Salary
-            });
+            var employeeEntity = await _employeeRepository.UpdateEmployeeAsync(id, updateemployeedto);
 
 
             if (employeeEntity == null)
@@ -125,9 +107,9 @@ namespace EmployeeAdminPortal.Api.Controllers
             var employeeDto = new EmployeesDto
             {
                 Id = employeeEntity.Id,
-                Name = updateemployeedto.Name,
-                Email = updateemployeedto.Email,
-                Phone = updateemployeedto.Phone
+                Name = employeeEntity.Name,
+                Email = employeeEntity.Email,
+                Phone = employeeEntity.Phone
             };
             return Ok(employeeDto);
         }

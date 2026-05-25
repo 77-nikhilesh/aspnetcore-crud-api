@@ -1,4 +1,5 @@
 ﻿using EmployeeAdminPortal.Api.Data;
+using EmployeeAdminPortal.Api.Dtos;
 using EmployeeAdminPortal.Api.Models.Entities;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,51 +18,81 @@ namespace EmployeeAdminPortal.Api.Repositories
         //Get All Employees
         public async Task<List<Employee>> GetAllEmployeesAsync()
         {
-            return await _dbContext.Employees.ToListAsync();
+            var employees = await _dbContext.Employees.ToListAsync();
+            return employees;
         }
 
         //Get Employee By Id
-        public async Task<Employee> GetEmployeeByIdAsync(Guid id)
+        public async Task<Employee?> GetEmployeeByIdAsync(Guid id)
         {
-            return await _dbContext.Employees.FindAsync(id);
+            var employee = await _dbContext.Employees.FindAsync(id);
+            if(employee == null) {
+                return null;
+            }
+            return employee;
         }
 
         //Add Employee
-        public async Task<Employee> AddEmployee(Employee employee)
+        public async Task<Employee> AddEmployeeAsync(AddEmployeeDto addEmployeeDto)
         {
+            var employee = new Employee
+            {
+                Name = addEmployeeDto.Name,
+                Email = addEmployeeDto.Email,
+                Phone = addEmployeeDto.Phone,
+                Salary = addEmployeeDto.Salary
+            };
             _dbContext.Employees.Add(employee);
-            _dbContext.SaveChanges();
-            return await employee;
+            await _dbContext.SaveChangesAsync();
+            return employee;
         }
 
         //Update employee
-        public async Task<Employee> UpdateEmployee(Guid id, Employee employee)
+        public async Task<Employee?> UpdateEmployeeAsync(Guid id, UpdateEmployeeDto updateEmployeeDto)
         {
             var existingEmployee = await _dbContext.Employees.FindAsync(id);
             if (existingEmployee== null)
             {
-                return NotFound();
+                return null;
             }
-            existingEmployee.Name = employee.Name;
-            existingEmployee.Email = employee.Email;
-            existingEmployee.Phone = employee.Phone;
+            existingEmployee.Name = updateEmployeeDto.Name;
+            existingEmployee.Email = updateEmployeeDto.Email;
+            existingEmployee.Phone = updateEmployeeDto.Phone;
+            existingEmployee.Salary = updateEmployeeDto.Salary;
 
             _dbContext.Employees.Update(existingEmployee);
             await _dbContext.SaveChangesAsync();
             return existingEmployee;
         }
 
+  
+
         //Delete Employee
-        public async Task<Employee> DeleteEmployeeAsyn(Guid id)
+        public async Task<Employee?> DeleteEmployeeAsync(Guid id)
         {
             var existingemployee = await _dbContext.Employees.FindAsync(id);
             if (existingemployee == null)
             {
-                return NotFound();
+                return null;
             }
-            await _dbContext.Employees.DeleteAsync(existingemployee);
-            _dbContext.SaveChanges();
+            _dbContext.Employees.Remove(existingemployee);
+            await _dbContext.SaveChangesAsync();
             return existingemployee;
         }
+
+    
+
+        public Task<Employee?> UpdateEmployeeAsync(Guid id, Employee employee)
+        {
+            throw new NotImplementedException();
+        }
+
+        
+
+       
+
+   
+
+      
     }
 }
