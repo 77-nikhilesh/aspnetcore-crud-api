@@ -1,4 +1,5 @@
-﻿using EmployeeAdminPortal.Api.Data;
+﻿using AutoMapper;
+using EmployeeAdminPortal.Api.Data;
 using EmployeeAdminPortal.Api.Dtos;
 using EmployeeAdminPortal.Api.Models.Entities;
 using Microsoft.EntityFrameworkCore;
@@ -8,10 +9,12 @@ namespace EmployeeAdminPortal.Api.Repositories
     public class SQLEmployeeRepository : IEmployeeRepository
     {
         private readonly ApplicationDbContext _dbContext;
+        private readonly IMapper mapper;
 
-        public SQLEmployeeRepository(ApplicationDbContext dbContext)
+        public SQLEmployeeRepository(ApplicationDbContext dbContext, IMapper mapper)
         {
             _dbContext = dbContext;
+            this.mapper = mapper;
         }
 
 
@@ -35,13 +38,16 @@ namespace EmployeeAdminPortal.Api.Repositories
         //Add Employee
         public async Task<Employee> AddEmployeeAsync(AddEmployeeDto addEmployeeDto)
         {
-            var employee = new Employee
-            {
-                Name = addEmployeeDto.Name,
-                Email = addEmployeeDto.Email,
-                Phone = addEmployeeDto.Phone,
-                Salary = addEmployeeDto.Salary
-            };
+            //var employee = new Employee
+            //{
+            //    Name = addEmployeeDto.Name,
+            //    Email = addEmployeeDto.Email,
+            //    Phone = addEmployeeDto.Phone,
+            //    Salary = addEmployeeDto.Salary
+            //};
+
+            //Auto Mapper
+             var employee = mapper.Map<Employee>(addEmployeeDto);
             _dbContext.Employees.Add(employee);
             await _dbContext.SaveChangesAsync();
             return employee;
@@ -55,10 +61,9 @@ namespace EmployeeAdminPortal.Api.Repositories
             {
                 return null;
             }
-            existingEmployee.Name = updateEmployeeDto.Name;
-            existingEmployee.Email = updateEmployeeDto.Email;
-            existingEmployee.Phone = updateEmployeeDto.Phone;
-            existingEmployee.Salary = updateEmployeeDto.Salary;
+
+            //Auto Mapper
+            mapper.Map(updateEmployeeDto, existingEmployee);
 
             _dbContext.Employees.Update(existingEmployee);
             await _dbContext.SaveChangesAsync();
@@ -82,10 +87,7 @@ namespace EmployeeAdminPortal.Api.Repositories
 
     
 
-        public Task<Employee?> UpdateEmployeeAsync(Guid id, Employee employee)
-        {
-            throw new NotImplementedException();
-        }
+      
 
         
 

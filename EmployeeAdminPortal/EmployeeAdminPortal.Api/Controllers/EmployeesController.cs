@@ -4,6 +4,7 @@ using EmployeeAdminPortal.Api.Models.Entities;
 using EmployeeAdminPortal.Api.Dtos;
 using Microsoft.EntityFrameworkCore;
 using EmployeeAdminPortal.Api.Repositories;
+using AutoMapper;
 
 
 namespace EmployeeAdminPortal.Api.Controllers
@@ -13,44 +14,48 @@ namespace EmployeeAdminPortal.Api.Controllers
     public class EmployeesController : ControllerBase
     {
 
-        private readonly ApplicationDbContext _dbContext;
+        //private readonly ApplicationDbContext _dbContext;
         private readonly IEmployeeRepository _employeeRepository;
+        private readonly IMapper mapper;
 
 
-        public EmployeesController(ApplicationDbContext dbcontext, IEmployeeRepository employeeRepository)
+        public EmployeesController(IEmployeeRepository employeeRepository,IMapper mapper)
         {
-            _dbContext = dbcontext;
+            //_dbContext = dbcontext;
             _employeeRepository = employeeRepository;
+            this.mapper = mapper;
         }
 
         //Get method
-
-        [HttpGet] //working good
+        [HttpGet] 
         public async Task<IActionResult> GetAllEmployeesASync()
         {
             var employees = await _employeeRepository.GetAllEmployeesAsync();
 
             var employeesdto=new List<EmployeesDto>();
-           
 
-            foreach(var employee in employees)
-            {
-                var employeeDto = new EmployeesDto
-                {
-                    Id = employee.Id,
-                    Name = employee.Name,
-                    Email = employee.Email,
-                    Phone = employee.Phone
-                };
-                employeesdto.Add(employeeDto);
-            }
+
+            //foreach(var employee in employees)
+            //{
+            //    var employeeDto = new EmployeesDto
+            //    {
+            //        Id = employee.Id,
+            //        Name = employee.Name,
+            //        Email = employee.Email,
+            //        Phone = employee.Phone
+            //    };
+            //    employeesdto.Add(employeeDto);
+            //}
+
+            //Auto mapping
+            employeesdto = mapper.Map<List<EmployeesDto>>(employees);
             return Ok(employeesdto);
 
         }
 
 
         //Get Employee By Id
-        [HttpGet("{id:guid}")] //working good
+        [HttpGet("{id:guid}")] 
         public async Task<IActionResult> GetEmployeeByIdAsync(Guid id)
         {
             var employeeEntity = await _employeeRepository.GetEmployeeByIdAsync(id);
@@ -59,30 +64,39 @@ namespace EmployeeAdminPortal.Api.Controllers
             {
                 return NotFound();
             }
-            var employeeDto = new EmployeesDto
-            {
-                Id = employeeEntity.Id,
-                Name = employeeEntity.Name,
-                Email = employeeEntity.Email,
-                Phone = employeeEntity.Phone
-            };
+
+            //var employeeDto = new EmployeesDto
+            //{
+            //    Id = employeeEntity.Id,
+            //    Name = employeeEntity.Name,
+            //    Email = employeeEntity.Email,
+            //    Phone = employeeEntity.Phone
+            //};
+
+            //Auto mapping
+            var employeeDto = mapper.Map<EmployeesDto>(employeeEntity);
 
             return Ok(employeeDto);
         }
 
 
         //Post Method
-        [HttpPost]  //working good
+        [HttpPost] 
         public async Task<IActionResult> AddEmployeeAsync(AddEmployeeDto addEmployeeDto)
         {
             var employeeEntity = await _employeeRepository.AddEmployeeAsync(addEmployeeDto);
-            var employeeDto = new EmployeesDto
-            {
-                Id = employeeEntity.Id,
-                Name = employeeEntity.Name,
-                Email = employeeEntity.Email,
-                Phone = employeeEntity.Phone
-            };
+
+
+            //var employeeDto = new EmployeesDto
+            //{
+            //    Id = employeeEntity.Id,
+            //    Name = employeeEntity.Name,
+            //    Email = employeeEntity.Email,
+            //    Phone = employeeEntity.Phone
+            //};
+
+            //Auto mapping
+            var employeeDto = mapper.Map<EmployeesDto>(employeeEntity);
 
             return Ok(employeeDto);
 
@@ -104,14 +118,17 @@ namespace EmployeeAdminPortal.Api.Controllers
 
             }
 
-            var employeeDto = new EmployeesDto
-            {
-                Id = employeeEntity.Id,
-                Name = employeeEntity.Name,
-                Email = employeeEntity.Email,
-                Phone = employeeEntity.Phone
-            };
-            return Ok(employeeDto);
+            //var employeeDto = new EmployeesDto
+            //{
+            //    Id = employeeEntity.Id,
+            //    Name = employeeEntity.Name,
+            //    Email = employeeEntity.Email,
+            //    Phone = employeeEntity.Phone
+            //};
+
+            //Auto mapping
+            var employeedto= mapper.Map<EmployeesDto>(employeeEntity);
+            return Ok(employeedto);
         }
 
 
