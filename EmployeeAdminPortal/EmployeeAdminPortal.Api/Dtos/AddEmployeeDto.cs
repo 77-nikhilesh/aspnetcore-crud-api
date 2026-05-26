@@ -17,7 +17,6 @@ namespace EmployeeAdminPortal.Api.Dtos
         public string Phone { get; set; }
 
         [Required]
-        [StringLength(50)]
         public decimal Salary { get; set; }
     }
 }

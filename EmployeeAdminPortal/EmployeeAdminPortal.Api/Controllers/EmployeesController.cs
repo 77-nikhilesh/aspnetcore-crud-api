@@ -84,23 +84,29 @@ namespace EmployeeAdminPortal.Api.Controllers
         [HttpPost] 
         public async Task<IActionResult> AddEmployeeAsync(AddEmployeeDto addEmployeeDto)
         {
-            var employeeEntity = await _employeeRepository.AddEmployeeAsync(addEmployeeDto);
+            //Check if the model state is valid
+            if (ModelState.IsValid)
+            {
+                var employeeEntity = await _employeeRepository.AddEmployeeAsync(addEmployeeDto);
 
 
-            //var employeeDto = new EmployeesDto
-            //{
-            //    Id = employeeEntity.Id,
-            //    Name = employeeEntity.Name,
-            //    Email = employeeEntity.Email,
-            //    Phone = employeeEntity.Phone
-            //};
+                //var employeeDto = new EmployeesDto
+                //{
+                //    Id = employeeEntity.Id,
+                //    Name = employeeEntity.Name,
+                //    Email = employeeEntity.Email,
+                //    Phone = employeeEntity.Phone
+                //};
 
-            //Auto mapping
-            var employeeDto = mapper.Map<EmployeesDto>(employeeEntity);
+                //Auto mapping
+                var employeeDto = mapper.Map<EmployeesDto>(employeeEntity);
 
-            return Ok(employeeDto);
+                return Ok(employeeDto);
+            }
+            return BadRequest(ModelState);
 
-         
+
+
         }
 
 
@@ -109,32 +115,36 @@ namespace EmployeeAdminPortal.Api.Controllers
         [HttpPut("{id:guid}")]
         public async Task<IActionResult> UpdateEmployeeAsync(Guid id, UpdateEmployeeDto updateemployeedto)
         {
-            var employeeEntity = await _employeeRepository.UpdateEmployeeAsync(id, updateemployeedto);
+            //Check if the model state is valid
+            if (ModelState.IsValid) {
+                var employeeEntity = await _employeeRepository.UpdateEmployeeAsync(id, updateemployeedto);
 
+                if (employeeEntity == null)
+                {
+                    return NotFound();
 
-            if (employeeEntity == null)
-            {
-                return NotFound();
+                }
 
+                //var employeeDto = new EmployeesDto
+                //{
+                //    Id = employeeEntity.Id,
+                //    Name = employeeEntity.Name,
+                //    Email = employeeEntity.Email,
+                //    Phone = employeeEntity.Phone
+                //};
+
+                //Auto mapping
+                var employeedto = mapper.Map<EmployeesDto>(employeeEntity);
+                return Ok(employeedto);
             }
+            return BadRequest(ModelState);
 
-            //var employeeDto = new EmployeesDto
-            //{
-            //    Id = employeeEntity.Id,
-            //    Name = employeeEntity.Name,
-            //    Email = employeeEntity.Email,
-            //    Phone = employeeEntity.Phone
-            //};
-
-            //Auto mapping
-            var employeedto= mapper.Map<EmployeesDto>(employeeEntity);
-            return Ok(employeedto);
         }
 
 
         //Delete Method
         [HttpDelete("{id:guid}")]
-        public async Task<IActionResult> DeleteEmployee(Guid id)
+        public async Task<IActionResult> DeleteEmployeeAsync(Guid id)
         {
             var employeeEntity =await  _employeeRepository.DeleteEmployeeAsync(id);
             if (employeeEntity == null)
