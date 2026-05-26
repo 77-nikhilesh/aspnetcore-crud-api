@@ -8,6 +8,7 @@
 - Swagger Integration
 - Repositories
 - AutoMapper
+- Validations
 
 ## Technologies
 - ASP.NET Core
