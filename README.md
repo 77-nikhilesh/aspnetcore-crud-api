@@ -9,6 +9,9 @@
 - Repositories
 - AutoMapper
 - Validations
+- Filtering
+- Sorting
+- Pagination
 
 ## Technologies
 - ASP.NET Core
