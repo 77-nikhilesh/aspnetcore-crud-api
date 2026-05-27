@@ -28,9 +28,10 @@ namespace EmployeeAdminPortal.Api.Controllers
 
         //Get method
         [HttpGet] 
-        public async Task<IActionResult> GetAllEmployeesASync([FromQuery] string? filterOn, [FromQuery] string? filterQuery)
+        public async Task<IActionResult> GetAllEmployeesASync([FromQuery] string? filterOn, [FromQuery] string? filterQuery,
+            [FromQuery] string? sortBy, [FromQuery] bool isAscending)
         {
-            var employees = await _employeeRepository.GetAllEmployeesAsync(filterOn, filterQuery);
+            var employees = await _employeeRepository.GetAllEmployeesAsync(filterOn, filterQuery, sortBy, isAscending);
 
             var employeesdto=new List<EmployeesDto>();
 

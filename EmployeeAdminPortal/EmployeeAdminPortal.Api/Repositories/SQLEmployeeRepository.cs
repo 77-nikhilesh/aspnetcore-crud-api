@@ -19,7 +19,8 @@ namespace EmployeeAdminPortal.Api.Repositories
 
 
         //Get All Employees
-        public async Task<List<Employee>> GetAllEmployeesAsync(string? filterOn=null, string? filterQuery=null)
+        public async Task<List<Employee>> GetAllEmployeesAsync(string? filterOn=null, string? filterQuery=null,
+            string? sortBy=null, bool isAscending=true)
         {
             var employees = _dbContext.Employees.AsQueryable();
 
@@ -29,6 +30,15 @@ namespace EmployeeAdminPortal.Api.Repositories
                 if (filterOn.Equals("Name", StringComparison.OrdinalIgnoreCase))
                 {
                     employees=employees.Where(x=>x.Name.Contains(filterQuery));
+                }
+            }
+
+            //sorting
+            if(string.IsNullOrWhiteSpace(sortBy) == false)
+            {
+                if (sortBy.Contains("Name", StringComparison.OrdinalIgnoreCase))
+                {
+                    employees= isAscending? employees.OrderBy(x=> x.Name) : employees.OrderByDescending(x => x.Name);
                 }
             }
 

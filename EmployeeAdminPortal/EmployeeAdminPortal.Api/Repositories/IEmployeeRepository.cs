@@ -7,7 +7,7 @@ namespace EmployeeAdminPortal.Api.Repositories
 {
     public interface IEmployeeRepository
     {
-        Task<List<Employee>> GetAllEmployeesAsync(string? filterOn=null, string? filterQuery=null);
+        Task<List<Employee>> GetAllEmployeesAsync(string? filterOn=null, string? filterQuery=null,string? sortBy=null, bool isAscending=true);
         Task<Employee?> GetEmployeeByIdAsync(Guid id);
         Task<Employee> AddEmployeeAsync(AddEmployeeDto addEmployeeDto);
         Task<Employee?> UpdateEmployeeAsync(Guid id, UpdateEmployeeDto updateEmployeeDto);
