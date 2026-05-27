@@ -19,10 +19,20 @@ namespace EmployeeAdminPortal.Api.Repositories
 
 
         //Get All Employees
-        public async Task<List<Employee>> GetAllEmployeesAsync()
+        public async Task<List<Employee>> GetAllEmployeesAsync(string? filterOn=null, string? filterQuery=null)
         {
-            var employees = await _dbContext.Employees.ToListAsync();
-            return employees;
+            var employees = _dbContext.Employees.AsQueryable();
+
+            //filtering
+            if(string.IsNullOrWhiteSpace(filterOn) == false && string.IsNullOrEmpty(filterQuery) == false)
+            {
+                if (filterOn.Equals("Name", StringComparison.OrdinalIgnoreCase))
+                {
+                    employees=employees.Where(x=>x.Name.Contains(filterQuery));
+                }
+            }
+
+            return await employees.ToListAsync();
         }
 
         //Get Employee By Id
