@@ -5,12 +5,14 @@ using EmployeeAdminPortal.Api.Dtos;
 using Microsoft.EntityFrameworkCore;
 using EmployeeAdminPortal.Api.Repositories;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 
 
 namespace EmployeeAdminPortal.Api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class EmployeesController : ControllerBase
     {
 
